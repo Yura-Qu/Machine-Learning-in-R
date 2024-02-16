@@ -60,3 +60,53 @@ test <- iris[!sample, ]
 > replace: should sampling be with replacement?
 >
 > prob: a vector of probability weights for obtaining the elements of the vector being sampled.
+
+## Parametric Methods and Non-Parametric Methods
+
+### Parametric methods / model-based approach
+Parametric methods involve a two-step model-based approach.
+1. First, we make an assumption about the functional form, or shape, of $f$.
+   e.g. we can assume $f$ is linear in $X$
+   ![image](https://github.com/Yura-Qu/Machine-Learning-in-R/assets/143141778/0ad1a88f-e1f5-446a-886d-a33e75d3866e)
+2. After a model has been selected, we need a procedure that uses the training data to fit or train the model. The most common approach to fitting the model is referred to
+as least squares
+> But we need to test our assumption about the shape of Y
+
+### Non-Parametric Methods
+Non-parametric methods do not make explicit assumptions about the functional form of $f$. Instead they seek an estimate of f that gets as close to the data points as possible without being too rough or wiggly. 
+- Pro:
+  **Accuracy**
+  By avoiding the assumption of a particular functional form for $f$, they have the potential to accurately fit a wider range of possible shapes for $f$.
+- Con:
+  **Sample Size**
+  A very large number of observations (far more than is typically needed for a parametric approach) is required in order to obtain an accurate estimate for f.
+
+##  Supervised Versus Unsupervised Learning
+### Supervised learning 
+> For each observation of the predictor measurement(s) $x_i, i = 1,...,n$ there is an associated response measurement y_i. **(i.e. the y or the labelling is available)**
+We wish to fit a model that relates the response to the predictors, with the aim of accurately predicting the response for future observations (prediction) or better understanding the relationship between the response and the predictors (inference).
+- e.g.
+  - Linear Regression
+  - logistic Regression
+  - GAM
+  - Boosting
+  - Support Vector Machines
+### Unsupervised learning 
+>  For every observation i = 1,...,n, we observe a vector of measurements $x_i$ but no associated response $y_i$. **(i.e. the y or the labelling is not available)**
+
+Thus, we can study the relationships between the variables or between the observations.
+- e.g. Clustering
+
+### Semi-supervised learning 
+For instance, suppose that we have a set of n observations. For m of the observations, where m<n, we have both predictor measurements and a response measurement. For the remaining n − m observations, we have predictor measurements but no response measurement. The semi-supervised learning can incorporate the m observations for which response measurements are available as well as the n − m observations for which they are not.
+
+##  The Trade-Off Between Prediction Accuracy and Model Interpretability
+![image](https://github.com/Yura-Qu/Machine-Learning-in-R/assets/143141778/09d6bdb1-33a3-418b-bafe-25f387e911d4)
+
+For instance, 
+- when inference is the goal, the linear model may be a good choice since it will be quite easy to understand the relationship between Y and $X_1, X_2,...,X_p$.
+- In contrast, very flexible approaches, such as the splines and the boosting methods can lead to such complicated estimates of f that it is difficult to understand how any individual predictor is associated with the response.
+
+> How to balance the trade-off between prediction accuracy and the model interpretability? The answer is **what is the question of interest**
+> 
+> We have established that when inference is the goal, there are clear advantages to using simple and relatively inflexible statistical learning methods. In some settings, however, we are only interested in prediction, and the interpretability of the predictive model is simply not of interest.
