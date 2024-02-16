@@ -1,0 +1,29 @@
+# Installing the packages 
+
+```{r}
+install.packages("caret")
+install.packages("mlbench")
+install.packages("caTools")
+install.packages("randomForest")
+install.packages("ranger")
+install.packages("kernlab")
+install.packages("glmnet")
+install.packages("naivebayes")
+```
+
+# Loading the libraries 
+
+```{r}
+library("caret")
+library("ggplot2")
+library("mlbench")
+library("class")
+library("caTools")
+library("randomForest")
+library("ranger")
+library("kernlab")
+library("glmnet")
+library("naivebayes")
+library("rpart")
+library("rpart.plot")
+```
