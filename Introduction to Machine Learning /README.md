@@ -91,11 +91,22 @@ We wish to fit a model that relates the response to the predictors, with the aim
   - GAM
   - Boosting
   - Support Vector Machines
+> In **supervised learning (SML)**, the response variables or the labels are available. SML itself is composed of :
+- classification, where the output is qualitative
+   - Binary classification: two sets of labels, or classes. A classical example thereof is labelling an email as spam or not spam.
+   - Multi-class problem: more than two classes
+   - Multi-label classification: multiple labels may be assigned to each example
+ - regression, where the output is quantitative.
 ### Unsupervised learning 
 >  For every observation i = 1,...,n, we observe a vector of measurements $x_i$ but no associated response $y_i$. **(i.e. the y or the labelling is not available)**
 
 Thus, we can study the relationships between the variables or between the observations.
 - e.g. Clustering
+
+> In unsupervised learning (UML), no labels are provided, and the learning algorithm focuses solely on detecting structure in unlabelled input data. One generally differentiates between
+- Clustering, where the goal is to find homogeneous subgroups within the data; the grouping is based on distance between observations.
+- Dimensionality reduction, where the goal is to identify patterns in the features of the data. Dimensionality reduction is often used to facilitate visualisation of the data, as well as a pre-processing method before supervised learning.
+
 
 ### Semi-supervised learning 
 For instance, suppose that we have a set of n observations. For m of the observations, where m<n, we have both predictor measurements and a response measurement. For the remaining n − m observations, we have predictor measurements but no response measurement. The semi-supervised learning can incorporate the m observations for which response measurements are available as well as the n − m observations for which they are not.
